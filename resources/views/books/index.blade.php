@@ -23,11 +23,8 @@ ss">
                         <tr>
                             <th>Judul</th>
                             <th>Penulis</th>
-                            <th>Tanggal Rilis</th>
                             <th>Edit</th>
                             <th>Delete</th>
-                            <th>Reviews</th>
-                            <th>Tags / Categories</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,7 +32,6 @@ ss">
                             <tr>
                                 <td>{{ $book->judul }}</td>
                                 <td>{{ $book->penulis }}</td>
-                                <td>{{ $book->tgl_rilis }}</td>
                                 <td>
                                     <a href="{{ route('books.edit', $book->id) }}" class="btn btn-primary">Edit</a>
                                 </td>
@@ -46,20 +42,7 @@ ss">
                                         <button type="submit" class="btn btn-danger">Delete</button>
                                     </form>
                                 </td>
-                                <td>
-                                        @foreach ($book->reviews()->get() as $bookreviews)
-                                            <div class="card shadow-sm mb-2">
-                                                <div class="card-body">
-                                                    <i class="fa fa-comments"></i> {{ $bookreviews->review }}
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                </td>
-                                <td>
-                                    @foreach ($book->tags()->get() as $tags)
-                                        <p class = "fa fa-comments">{{ $tags->tag }}</p>
-                                    @endforeach
-                                </td>
+                                
                             </tr>
                         @empty
                         @endforelse

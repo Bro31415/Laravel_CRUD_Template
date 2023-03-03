@@ -31,7 +31,3 @@ Route::delete('/delete-book/{id}', [BookController::class, 'deleteBook'])->name(
 Route::resource('/visitors', \App\Http\Controllers\VisitorController::class);
 
 Route::get('/add-visitors', [\App\Http\Controllers\VisitorController::class, 'create'])->name('create');
-
-Route::get('/review/{id}', [BookController::class, 'getBooktoReviewbyId'])->name('getBooktoReviewbyId');
-
-Route::patch('/review/{id}', [BookController::class, 'giveReviews'])->name('review');

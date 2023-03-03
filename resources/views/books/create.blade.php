@@ -32,13 +32,6 @@ initial-scale=1.0">
                     @enderror
                 </div>
 
-                <div class="form-group">
-                    <label class="font-weight-bold">Tanggal Rilis</label>
-                    <input type="date" class="form-control" name="tgl_rilis" value="{{ old('tgl_rilis') }}">
-                    @error('tgl_rilis')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
 
                 <button type="submit" class="btn btn-md btn-primary">Save</button>
             </form>

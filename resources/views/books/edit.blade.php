@@ -43,15 +43,7 @@ ss">
                     @enderror
                 </div>
                 
-                <div class="mb-3">
-                    <label for="tgl_rilis" class="form-label">Tanggal Rilis</label>
-                    <input name="tgl_rilis" type="date" value="{{$book->tgl_rilis}}" class="form-control" id="formGroupExampleInput" placeholder="Input Release Date of Book">
-                    @error('tgl_rilis')
-                    <div class="text-danger">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
+            
                 <div class="card-body text-center">
                     <button type="submit" class="btn btn-success">Update</button>
                 </div>

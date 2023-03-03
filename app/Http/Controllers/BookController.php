@@ -67,13 +67,43 @@ class BookController extends Controller
         return redirect(route('books.index'));
     }
 
-    public function getBooktoReviewbyId($id){
+// API
+// Read
+    public function apiGetBooks() {
+        $book = Book::all();
+
+        return $book;
+    }
+// Create
+    public function apiStore(Request $request)
+    {
+
+        Book::create([
+            'judul' => $request->judul,
+            'penulis' => $request->penulis,
+        ]);
+
+        return 'SUCCESS';
+    }
+// DEl
+    public function apiDeleteBook($id)
+    {
+        Book::destroy($id);
+
+        return 'SUCCESS';
+    }
+// update
+    public function apiUpdateBook(Request $request, $id){
         $book = Book::find($id);
 
-        return view('books.giveReview');
+        $book -> update([
+            'judul' => $request->judul,
+            'penulis' => $request->penulis
+        ]);
+
+        return 'SUCCESS';
     }
 
-    public function giveReviews(Book $book){
-        return view('books.givereview');
-    }
+
+    
 }

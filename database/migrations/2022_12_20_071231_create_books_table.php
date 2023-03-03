@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->string('penulis');
-            $table->date('tgl_rilis');
             $table->timestamps();
         });
     }
